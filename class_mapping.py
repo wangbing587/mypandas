@@ -16,3 +16,5 @@ y = class_le.fit_transform(df['classlabel'].values)
 from sklearn.preprocessing import OneHotEncoder
 ohe = OneHotEncoder(categorical_features=[0])
 ohe.fit_transform(X).toarray()
+
+pd.get_dummies(df[['price', 'color', 'size']])
