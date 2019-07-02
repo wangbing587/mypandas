@@ -10,3 +10,9 @@ df['classlabel'] = df['classlabel'].map(inv_class_mapping)
 from sklearn.preprocessing import LabelEncoder
 class_le = LabelEncoder()
 y = class_le.fit_transform(df['classlabel'].values)
+
+
+# One-hot
+from sklearn.preprocessing import OneHotEncoder
+ohe = OneHotEncoder(categorical_features=[0])
+ohe.fit_transform(X).toarray()
