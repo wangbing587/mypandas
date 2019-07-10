@@ -3,9 +3,9 @@
 """
 @Author  : WangBing
 @Email   : wangbing587@163.com
-@Time    : 2019/7/10 10:07
+@Time    : 2019/7/10 11:07
 @File    : mysql.py
-@Desc  : 数据库的保存和读取
+@Desc    : 数据库的保存及读取
 """
 
 import pandas as pd
@@ -29,4 +29,3 @@ df.to_sql(name='result', con=engine,  if_exists='replace', index=None)
 # 读取
 con = pymysql.connect(host=host, user=user, password=password, db=db)
 data = pd.read_sql('select * from result', con=con)
-print(data)
