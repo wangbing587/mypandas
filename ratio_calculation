@@ -1,0 +1,6 @@
+def ratio_calculation(data, Gname, Sname):
+    sum_data = data[Sname].groupby(data[Gname]).sum().reset_index().rename(columns={Sname: 'sum'})
+    merge_data = pd.merge(data, sum_data, on=Gname, how='left')
+    merge_data['ratio'] = merge_data[Sname] / merge_data['sum']
+    df = merge_data.drop('sum', axis=1)
+    return df
