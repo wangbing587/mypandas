@@ -1,4 +1,4 @@
 def count_stats(data, feature):
-    counts = data[feature].value_counts().reset_index().rename(columns={'index': feature, feature: feature + 'count'})
+    counts = data[feature].value_counts().reset_index().rename(columns={'index': feature, feature: feature + '_count'})
     df = pd.merge(data, counts, on=feature, how='left')
     return df
