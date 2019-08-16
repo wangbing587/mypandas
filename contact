@@ -1,0 +1,1 @@
+pd.concat([data.loc[[i]].T, data.loc[:, [j]]], axis=1)
