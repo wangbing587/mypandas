@@ -1,0 +1,7 @@
+m, n = data.shape
+cols = np.array(data.columns)
+inds = np.array(data.index)
+miR_index = np.tile(inds.reshape(-1, 1), n).ravel()
+miR_columns = np.tile(cols.reshape(1, -1), m).ravel()
+values = data.values.ravel()
+df = pd.DataFrame({'miR_index': miR_index, 'miR_columns': miR_columns, 'values': values})
