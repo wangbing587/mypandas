@@ -1,2 +1,2 @@
 data.isnull().sum()
-data[data.isnull().values===True]
+data[data.isnull().values==True]
